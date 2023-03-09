@@ -31,7 +31,20 @@ def getKey(keyName):
 
 def getKeyboardInput():
     lr,fb, ud, yv  = 0, 0, 0, 0 #left/right    forward/back    up/down  yv (yaw-velocity) - rotation
-    speed = 50
+
+    #slow
+    #speed = 50
+
+    #normal
+    speed = 100
+
+    #sport
+    #speed = 150
+
+    #ultra
+    #speed = 500
+
+    rotationSpeed = 200
 
     if getKey("LEFT"): lr = -speed
     elif getKey("RIGHT"): lr = speed
@@ -42,11 +55,33 @@ def getKeyboardInput():
     if getKey("w"): ud = speed
     elif getKey("s"): ud = -speed
 
-    if getKey("a"): yv = -speed
-    elif getKey("d"): vy = speed
+    if getKey("a"): yv = -rotationSpeed
+    elif getKey("d"): yv = rotationSpeed
 
     if getKey("SPACE"): myTello.takeoff()
     elif getKey("l"): myTello.land()
+
+
+    if getKey("KP8"):
+        myTello.flip_forward()
+    if getKey("KP2"):
+        myTello.flip_back()
+    if getKey("KP4"):
+        myTello.flip_left()
+    if getKey("KP6"):
+        myTello.flip_right()
+
+
+    if getKey("x"):
+        myTello.flip_forward()
+        myTello.rotate_counter_clockwise(90)
+        myTello.flip_left()
+        myTello.rotate_counter_clockwise(90)
+        myTello.flip_back()
+        myTello.rotate_counter_clockwise(90)
+        myTello.flip_right()
+        myTello.rotate_counter_clockwise(90)
+
 
 
     return [lr, fb, ud, yv]   #It is like am list, but it is more like an string
