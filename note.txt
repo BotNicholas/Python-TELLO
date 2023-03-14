@@ -1,0 +1,16 @@
+so
+to work with tello drone we need next libraries
+
+djitellopy
+pygame
+opencv-python
+cv2-tools
+
+
+
+
+
+
+
+
+...https://github.com/neonil123/Curs_Platforma_Robotica_T300_CTM
