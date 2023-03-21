@@ -20,8 +20,8 @@
 
 
 #2-nd variant
-from djitellopy import Tello
-import cv2
+# from djitellopy import Tello
+# import cv2
 
 #Drone initializing
 # tello = Tello()
